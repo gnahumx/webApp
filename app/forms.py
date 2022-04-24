@@ -9,3 +9,5 @@ class Persona(FlaskForm):
     Email = StringField('Email', validators=[DataRequired(), Email()])
     #password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Enviar')
+
+    
