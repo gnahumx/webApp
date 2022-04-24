@@ -1,8 +1,10 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, url_for, render_template, request
 from forms import Persona
 
 app = Flask(__name__)
-# Bootstrap(app)
+
+
+app.secret_key = "LmCOWJ~fj3PnfHTJp"
 
 
 @app.route('/')
@@ -29,7 +31,11 @@ def form():
 
 @app.route("/form-objeto", methods=["GET", "POST"])
 def form_objeto():
-    return render_template("form-objeto.html")
+    form = Persona()
+    if form.validate_on_submit():
+        return f"nombre={ request.form['nombre'] } | correo={ request.form['correo'] }"
+        #| genero={ request.form['genero'] }
+    return render_template("form-objeto.html", form=form)
 
 
 if __name__ == '__main__':
