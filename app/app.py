@@ -25,7 +25,7 @@ def about():
 @app.route("/form", methods=["GET", "POST"])
 def form():
     if request.method == 'POST':
-        return f"nombre={ request.form['nombre'] } | genero={ request.form['genero'] } | correo={ request.form['correo'] }"
+        return f"nombre={ request.form['nombre'] } | correo={ request.form['correo'] }"
     return render_template("form.html")
 
 
@@ -34,7 +34,6 @@ def form_objeto():
     form = Persona()
     if form.validate_on_submit():
         return f"nombre={ request.form['nombre'] } | correo={ request.form['correo'] }"
-        #| genero={ request.form['genero'] }
     return render_template("form-objeto.html", form=form)
 
 

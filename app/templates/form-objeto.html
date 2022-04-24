@@ -4,8 +4,8 @@
 <h1>Datos Objeto</h1>
 <form action="" method="post">
     <div class="form-group form-group-lg">
-        {{ form.Nombre.label }} {{ form.Nombre(class_="form-control", placeholder_="Nombre") }}
-        {% for error in form.Nombre.errors %}
+        {{ form.nombre.label }} {{ form.nombre(class_="form-control", placeholder_="Nombre") }}
+        {% for error in form.nombre.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </div>
@@ -19,8 +19,8 @@
         </datalist>
     </div>-->
     <div class="form-group form-group-lg">
-        {{ form.Email.label }} {{ form.Email(class_="form-control", placeholder_="E-mail") }}
-        {% for error in form.Email.errors %}
+        {{ form.email.label }} {{ form.email(class_="form-control", placeholder_="E-mail") }}
+        {% for error in form.email.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </div>
