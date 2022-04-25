@@ -21,13 +21,14 @@ def top():
 def contacto():
     nombre = request.form.get("nombre")
     email = request.form.get("email")
-    return render_template('contacto.html', nombre=nombre, email=email)
+    lugar = request.form.get("lugar")
+    return render_template('contacto.html', nombre=nombre, email=email, lugar=lugar)
 
 
 @app.route("/form", methods=["GET", "POST"])
 def form():
     if request.method == 'POST':
-        return f"nombre={ request.form['nombre'] } | correo={ request.form['correo'] }"
+        return f"nombre={ request.form['nombre'] } | correo={ request.form['correo'] } | lugar={ request.form['lugar'] }"
     return render_template("form.html")
 
 
