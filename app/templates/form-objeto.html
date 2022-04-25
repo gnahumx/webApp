@@ -2,14 +2,14 @@
 {% block title %}Registro de usuarios{% endblock %}
 {% block content %}
 <h1>Datos Objeto</h1>
-<form action="" method="post">
+<form action="{{ url_for('contacto') }}" method="post">
     <div class="form-group form-group-lg">
         {{ form.nombre.label }} {{ form.nombre(class_="form-control", placeholder_="Nombre") }}
         {% for error in form.nombre.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </div>
-    <!--
+<!--
     <div class="form-group form-group-lg">
         {{ form.genero.label }} {{form.genero(list_="id_datalist", class_="form-control", placeholder_="Seleccionar")}}
         <datalist id="id_datalist">
@@ -19,7 +19,7 @@
             {% endfor %}
         </datalist>
     </div>
-    -->
+-->
     <div class="form-group form-group-lg">
         {{ form.email.label }} {{ form.email(class_="form-control", placeholder_="E-mail") }}
         {% for error in form.email.errors %}
@@ -29,5 +29,19 @@
     <hr />
     {{ form.hidden_tag() }}
     {{ form.submit(class_="btn btn-success")}}
+
+    <!--
+    <div class="form-group form-group-lg">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control">
+    </div>
+
+    <div class="form-group form-group-lg">
+        <label for="email">Correo Electrónico</label>
+        <input type="text" name="email" id="email" placeholder="Correo Electrónico" class="form-control">
+    </div>
+    <hr />
+    <button type="submit" class="btn btn-success">Enviar</button>
+    -->
 </form>
 {% endblock %}

@@ -17,9 +17,11 @@ def top():
     return render_template('top.html')
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/contacto', methods=["GET", "POST"])
+def contacto():
+    nombre = request.form.get("nombre")
+    email = request.form.get("email")
+    return render_template('contacto.html', nombre=nombre, email=email)
 
 
 @app.route("/form", methods=["GET", "POST"])
